@@ -1,4 +1,5 @@
 # cppi
 Implementing a CPPI strategy
 
-This repo will be populated with code on CPPI..
+This repo contains a class which includes a lot of financial models including CPPI.
+
