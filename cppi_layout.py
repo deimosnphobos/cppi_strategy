@@ -94,7 +94,6 @@ def main():
             ax = inp['Wealth'].iloc[:, 0].plot(figsize=(18, 10), color = 'blue', linewidth= 3, label='CPPI Strategy')
             inp['Risky Wealth'].iloc[:, 0].plot(ax=ax, style='k',linewidth= 2, label='If 100% invested in {}'.format(classifier))
             inp['floor'].iloc[:, 0].plot(ax=ax, color='r', linestyle='--', label='Floor Value of the Investment', linewidth= 3)
-         #   ax.set_title('CPPI in %s' % classifier, fontsize=20, fontweight = 'bold')
             ax.set_xlabel('Date', fontsize=20, fontweight = 'bold')
             ax.set_ylabel('Index Values', fontsize=20, fontweight = 'bold')
 
@@ -103,7 +102,6 @@ def main():
             st.pyplot(fig)
 
             ## Understanding the distribution
-
     def annualize_rets(r, periods_per_year=52):
         compounded_growth = (1 + r).prod()
         n_periods = r.shape[0]
@@ -198,7 +196,6 @@ def main():
         Q = cppi_func(ind)
 
         # Comparing the risk profile and distribution characteristics
-        # if st.sidebar.checkbox('Compare VaR, Drawdown etc.', False):
         metric1 = Q['Risky Wealth'].pct_change().dropna()   # Risky Portfolio
         metric2 = Q['Wealth'].pct_change().dropna()  # CPPI Portfolio
         metrics_combined = pd.concat([metric1, metric2], axis=1)
@@ -259,7 +256,7 @@ def main():
         rebalance = st.sidebar.number_input("Rebalance/year", 1, 252, step=1, value=12, key='rebals')
         drawdown_ = st.sidebar.radio("Drawdown from the peak ?", ('Yes', 'No'), key='drawdown_')
 
-        floor_ = 0.80  # needed to prvent error message
+        floor_ = 0.80  # needed to prevent error message
         if drawdown_ == 'No':
             drawdown_ratio = None
             floor_ = st.sidebar.slider("Floor %", 0.0, 100.0, step=1.0, value=80.0, key='floor_')
@@ -278,7 +275,6 @@ def main():
             rets_plus_1[0] = 1
 
             ret_val = s0 * pd.DataFrame(rets_plus_1).cumprod() if prices else pd.DataFrame(rets_plus_1) - 1
-            # prices False olursa donemsel getirileri verir, True olursa cumprod getiriler
 
             return ret_val
 
