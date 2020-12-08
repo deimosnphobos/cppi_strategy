@@ -18,7 +18,7 @@ def main():
 
     @st.cache(persist=True)
     def load_data():
-        ric_history = pd.read_excel('/users/eyupgulsun/desktop/bist_indices_data.xlsx',  index_col='Date', parse_dates=True)
+        ric_history = pd.read_excel('bist_indices_data.xlsx',  index_col='Date', parse_dates=True)
         ric_history_pct = ric_history.pct_change().dropna()
         return ric_history, ric_history_pct
 
