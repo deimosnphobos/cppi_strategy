@@ -25,7 +25,7 @@ def main():
     index_names = pd.DataFrame({'Index Names': {'.XU100': 'BIST 100', '.XU030': 'BIST 30', '.XTUMY': 'BIST ALL -100',
                                                 '.XBANK': 'BIST BANKS', '.XUSIN': 'BIST INDUSTRIALS','.XHOLD': 'BIST HOLDING AND INVESTMENT',
                                                 '.XBLSM': 'BIST INFO. TECHNOLOGY', '.XULAS': 'BIST TRANSPORTATION', '.XELKT': 'BIST ELECTRICITY',
-                                                '.XGIDA': 'BIST FOOD BEVERAGE', '.XTRZM': 'BIST TOURISM', '.XYUZO': 'BIST 100-30'}})
+                                                '.XGIDA': 'BIST FOOD BEVERAGE', '.XTRZM': 'BIST TOURISM'}})
 
     df_abs, df_pct = load_data()
 
