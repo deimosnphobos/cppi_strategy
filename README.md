@@ -1,5 +1,5 @@
 # cppi
-Implementing a CPPI strategy
+Implementing CPPI strategy on various stock indices
 
 This repo contains a class which includes a lot of financial models including CPPI.
 
